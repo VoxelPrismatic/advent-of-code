@@ -29,7 +29,7 @@ func main() {
 	}
 
 	lines := strings.Split(string(data), "\n")
-	if lines[len(lines)-1] == "" {
+	for lines[len(lines)-1] == "" {
 		lines = lines[:len(lines)-1]
 	}
 
@@ -42,6 +42,14 @@ func main() {
 		fallthrough
 	case "01b":
 		calendar.Day01_Part2(lines)
+	case "2a":
+		fallthrough
+	case "02a":
+		calendar.Day02_Part1(lines)
+	case "2b":
+		fallthrough
+	case "02b":
+		calendar.Day02_Part2(lines)
 	default:
 		fmt.Printf("Stage `%s' not implemented\n", stage)
 	}
