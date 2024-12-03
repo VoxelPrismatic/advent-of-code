@@ -1,6 +1,7 @@
 package main
 
 import (
+	"aoc/calendar"
 	"fmt"
 	"io"
 	"os"
@@ -28,9 +29,19 @@ func main() {
 	}
 
 	lines := strings.Split(string(data), "\n")
-	fmt.Println(lines)
+	if lines[len(lines)-1] == "" {
+		lines = lines[:len(lines)-1]
+	}
 
 	switch stage {
+	case "1a":
+		fallthrough
+	case "01a":
+		calendar.Day01_Part1(lines)
+	case "1b":
+		fallthrough
+	case "01b":
+		calendar.Day01_Part2(lines)
 	default:
 		fmt.Printf("Stage `%s' not implemented\n", stage)
 	}
