@@ -70,6 +70,14 @@ func main() {
 	case "04b":
 		calendar.Day04_Part2(lines)
 
+	case "5a":
+		fallthrough
+	case "05a":
+		calendar.Day05_Part1(lines)
+	case "5b":
+		fallthrough
+	case "05b":
+		calendar.Day05_Part2(lines)
 	default:
 		fmt.Printf("Stage `%s' not implemented\n", stage)
 	}
